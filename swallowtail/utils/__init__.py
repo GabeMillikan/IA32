@@ -1,2 +1,2 @@
-from . import bits
+from . import binary
 from . import file
