@@ -1,13 +1,13 @@
 from dataclasses import dataclass
-from typing import Callable
+import typing
 
-from parsers import BaseParser
-from operation.operator import BaseOperator
-import utils
+from .parsers import BaseParser
+from .operation.operator import BaseOperator
+from . import utils
 
 @dataclass
 class Mutator:
-    function: Callable[..., tuple[BaseOperator]] 
+    function: typing.Callable[..., tuple[BaseOperator]] 
     ops: list[BaseOperator] | None # if None, then no mutation should take place
 
 class Program:
@@ -18,7 +18,7 @@ class Program:
         self.parser = parser
         self.mutators = []
     
-    def mutator(self, *ops: BaseOperator):
+    def mutator(self, *ops: typing.Type[BaseOperator]):
         if len(ops) == 0:
             raise ValueError('You must match at least one operator.')
         
