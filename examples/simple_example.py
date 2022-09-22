@@ -2,7 +2,7 @@ from swallowtail.operation import operator as op
 from swallowtail import parsers
 from swallowtail.program import Program
 
-image = Program(parsers.DLL('env/Scripts/python.exe'))
+image = Program(parsers.DLL('examples/HelloWorld_x86.exe'))
 
 '''
 @image.mutator(op.Move)
