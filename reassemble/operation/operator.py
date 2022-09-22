@@ -1,19 +1,13 @@
 from .operand import register as reg
 
-def operator(mnemonic):
-    def decorator(cls):
-        cls.mnemonic = mnemonic
-        return cls
-    return decorator
-
-@operator('MOV')
-class Move:
+class BaseOperator:
     pass
 
-@operator('PUSH')
-class Push:
-    pass
+class Move(BaseOperator):
+    mnemonic = 'MOV'
 
-@operator('POP')
-class Pop:
-    pass
+class Push(BaseOperator):
+    mnemonic = 'PUSH'
+
+class Pop(BaseOperator):
+    mnemonic = 'POP'
