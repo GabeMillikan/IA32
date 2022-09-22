@@ -83,7 +83,7 @@ class WORD(int, StructuredField):
     format: str = 'H'
 
     def __repr__(self):
-        return f'{self:0{self.size * 2}x}h ({self:d})'
+        return f'{self:0{self.size * 2}X}h ({self:d})'
 
 class LONG(int, StructuredField):
     size: int = 4
@@ -94,7 +94,7 @@ class DWORD(int, StructuredField):
     format: str = 'L'
 
     def __repr__(self):
-        return f'{self:0{self.size * 2}x}h ({self:,d})'
+        return f'{self:0{self.size * 2}X}h ({self:,d})'
 
 def LENGTH(length: int) -> typing.Any:
     return length
