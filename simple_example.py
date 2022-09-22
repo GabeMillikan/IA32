@@ -1,6 +1,6 @@
-from reassemble.operation import operator as op
-from reassemble import parsers
-from reassemble.program import Program
+from swallowtail.operation import operator as op
+from swallowtail import parsers
+from swallowtail.program import Program
 
 image = Program(parsers.DLL('original.dll'))
 
