@@ -1,6 +1,8 @@
-from reassemble import WindowsPortableExecutable as WinPE, operator as op
+from reassemble.operation import operator as op
+from reassemble import parsers
+from reassemble.program import Program
 
-image = WinPE('original.dll')
+image = Program(parsers.DLL('original.dll'))
 
 @image.mutator(op.Move)
 def mov_to_pushpop(mov):
