@@ -135,7 +135,7 @@ class WindowsPortableExecutable(BaseParser):
             f"{self.image_dos_header.prettify(prefix='    ')}" \
             f'\n\n' \
             f"IMAGE_FILE_HEADER\n" \
-            f"{self.image_nt_header.prettify(prefix='    ')}XXX" \
+            f"{self.image_nt_header.prettify(prefix='    ')}" \
             f'\n\n' \
             f'IMAGE_SECTION_HEADERS[{len(self.image_section_headers)}]\n    ' \
             + f'\n    '.join(repr(x) for x in self.image_section_headers)
