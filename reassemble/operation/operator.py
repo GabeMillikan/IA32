@@ -10,3 +10,10 @@ def operator(mnemonic):
 class Move:
     pass
 
+@operator('PUSH')
+class Push:
+    pass
+
+@operator('POP')
+class Pop:
+    pass
