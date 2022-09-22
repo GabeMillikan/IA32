@@ -1,4 +1,4 @@
-def extract(data: int, *groups: list[int]) -> tuple[int]:
+def extract(data: int, *groups: int) -> tuple[int]:
     '''
     Extract groups of bits from an integer.
 
@@ -9,13 +9,12 @@ def extract(data: int, *groups: list[int]) -> tuple[int]:
     True
     '''
 
-    results = []
+    results: list[int] = []
     for group in reversed(groups):
         results.append(data & ((1 << group) - 1))
         data >>= group
 
     return tuple(reversed(results))
-
 
 if __name__ == "__main__":
     import doctest
